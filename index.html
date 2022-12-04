@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <script src="animation.js"></script>
 
+    <link rel="stylesheet" href="index.css">
+<title>CypherCon Decryption Toolbox</title>
+</head>
+<body>
+  <div id="sketch">
+  </div>
+
+    <!-- Navbar -->
+    <div class="menu-area">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Tools</a>
+          <ul class="dropdown-1">
+            <li><a href="viginere.html">Viginere</a></li>
+            <li><a href="ceasar.html">Ceasar</a></li>
+            <li><a href="#">service three</a>
+              
+            </li>
+          </ul>
+</li>
+        <li><a href="#">CypherCon</a></li>
+        <li><a href="#">Cypher Forest</a></li>
+      </ul>
+    </div>
+  
+    
+  <!--Into to the tool kit-->
+  <h5>The Ceasar Cypher was developed by the man himself  </h5>
+
+<!--Main Page toolkit grid-->
+
+   
+      
+        <div class="tool">        
+          <textarea id="text" cols="26" rows="1"  placeholder="enter message here"></textarea>
+          <br>
+         Result: <div id='result'></div>
+Enter value to shift: 
+          <input type="text" value="3" id="shift" style="width:6em"/>
+
+          <button onclick="ceasarCypherEncrypt()">Encrypt</button>
+          <button onclick="ceasarCypherDecrypt()">Decrypt</button>
+
+
+        </div>   
+
+    <script src="rotcypher.js"></script>
+
+</body>
