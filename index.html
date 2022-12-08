@@ -20,13 +20,10 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="#">Tools</a>
           <ul class="dropdown-1">
-            <li><a href="viginere.html">Viginere</a></li>
             <li><a href="ceasar.html">Ceasar</a></li>
-            <li><a href="#">service three</a>
-              
-            </li>
+            <li><a href="viginere.html">Viginere</a></li>
           </ul>
-</li>
+        </li>
         <li><a href="#">CypherCon</a></li>
         <li><a href="#">Cypher Forest</a></li>
       </ul>
@@ -34,25 +31,20 @@
   
     
   <!--Into to the tool kit-->
-  <h5>The Ceasar Cypher was developed by the man himself  </h5>
+  <h5>The Ceasar Cypher was developed by uhh.... Julius Ceasar</h5>
 
 <!--Main Page toolkit grid-->
 
-   
-      
-        <div class="tool">        
-          <textarea id="text" cols="26" rows="1"  placeholder="enter message here"></textarea>
-          <br>
-         Result: <div id='result'></div>
-Enter value to shift: 
-          <input type="text" value="3" id="shift" style="width:6em"/>
+  <div class="tool">        
+    <textarea id="text" cols="26" rows="1"  placeholder="enter message here"></textarea>
+      <br>
+        Result: <div id='result'></div>
+        Enter value to shift: 
+      <input type="text" value="3" id="shift" style="width:6em"/>
+      <button onclick="ceasarCypherEncrypt()">Encrypt</button>
+      <button onclick="ceasarCypherDecrypt()">Decrypt</button>
+  </div>   
 
-          <button onclick="ceasarCypherEncrypt()">Encrypt</button>
-          <button onclick="ceasarCypherDecrypt()">Decrypt</button>
-
-
-        </div>   
-
-    <script src="rotcypher.js"></script>
-
+  <script src="rotcypher.js"></script>
 </body>
+</html>
