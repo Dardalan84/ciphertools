@@ -2,17 +2,18 @@
     function setup() {
 
     
-        var cnv = createCanvas(outerWidth, 80);
+        var cnv = createCanvas(outerWidth, 120);
         cnv.parent("sketch");
-        background(0);
-        fill(0,0,58);
+        background(0,22,42);
+        fill(0,0,18);
     }
 
 
   
   function draw() {
-
-      fill(0,0,58);
+frameRate(10);
+      fill(0,0,random(130,150));
+   
     textAlign(CENTER);
     textSize(52);
     textStyle(BOLD);
@@ -24,6 +25,7 @@
       fill(0);
     }
     noStroke();
+   
     ellipse(mouseX, mouseY, 80, 80);
 
   }

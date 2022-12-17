@@ -23,7 +23,8 @@ var app = new function() {
 		}
 		
 		var textElem = document.getElementById("text");
-		textElem.value = crypt(textElem.value, keyArray);
+		var result = document.getElementById('result');
+		result.innerHTML = crypt(textElem.value, keyArray);
 	};
 	
 	

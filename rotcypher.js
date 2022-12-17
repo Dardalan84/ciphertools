@@ -8,7 +8,6 @@ const alphabet = [
 ];
 
 
-
 function ceasarCypherEncrypt(){
 const str = document.getElementById('text').value.split(' ').join('');
 const text = str.toLowerCase();
@@ -24,6 +23,8 @@ code = (code - 122) + 96
 result.push(String.fromCharCode(code))
 }
 document.getElementById('result').innerHTML = result.join('');
+
+resultAnimate();
 }
 
 
@@ -51,6 +52,7 @@ result.push(String.fromCharCode(code))
 
 }
 document.getElementById('result').innerHTML = result.join('');
+resultAnimate();
 }
 
 
