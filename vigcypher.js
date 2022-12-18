@@ -46,7 +46,7 @@ var app = new function() {
 				output += input.charAt(i);
 			}
 		}
-		
+		resultAnimate();
 		return output;
 	}
 	
@@ -67,6 +67,7 @@ var app = new function() {
 				result.push((c - 65) % 32);
 		}
 		return result;
+		
 	}
 	
 	
