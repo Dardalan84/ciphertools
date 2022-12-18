@@ -1,62 +1,89 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap" rel="stylesheet">
-
-<link href="https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-    <script src="animation.js"></script>
-
-    <link rel="stylesheet" href="index.css">
-<title>CypherCon Decryption Toolbox</title>
-</head>
-<body>
-  <div id="sketch">
-  </div>
-
-    <!-- Navbar -->
-    <div class="menu-area">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">Tools</a>
-          <ul class="dropdown-1">
-            <li><a href="ceasar.html">Ceasar</a></li>
-            <li><a href="viginere.html">Viginere</a></li>
-            <li><a href="base64.html">Base64</a></li>
-          </ul>
-        </li>
-        <li><a href="#">CypherCon</a></li>
-        <li><a href="#">Cypher Forest</a></li>
-      </ul>
-    </div>
-
-<!--Main Page toolkit grid-->
-
-   
-      
-        <div class="tool">
-
-          <h5>Viginere</h5>
-    
-              <textarea id="text" cols="26" rows="1" placeholder="enter message here..."></textarea>
-              <div id='result'></div>    
-             
-              <input type="text" value="key" id="key" style="width:4em"/>
-                                      
-              <button onclick="app.doCrypt(false);">Encrypt</button>
-              <button onclick="app.doCrypt(true);">Decrypt</button>
-              
-        </div>   
-             
-     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-    <script src="rotcypher.js"></script>
-    <script src="vigcypher.js"></script>
-
-</body>
+var app = new function() {
+	
+	/* 
+	 * Handles the HTML input/output for Vigenère cipher encryption/decription.
+	 * This is the one and only entry point function called from the HTML code.
+	 */
+	this.doCrypt = function(isDecrypt) {
+		var keyStr = document.getElementById("key").value;
+		if (keyStr.length == 0) {
+			alert("Key is empty");
+			return;
+		}
+		
+		var keyArray = filterKey(keyStr);
+		if (keyArray.length == 0) {
+			alert("Key has no letters");
+			return;
+		}
+		
+		if (isDecrypt) {
+			for (var i = 0; i < keyArray.length; i++)
+				keyArray[i] = (26 - keyArray[i]) % 26;
+		}
+		
+		var textElem = document.getElementById("text");
+		var result = document.getElementById('result');
+		result.innerHTML = crypt(textElem.value, keyArray);
+	};
+	
+	
+	/* 
+	 * Returns the result the Vigenère encryption on the given text with the given key.
+	 */
+	function crypt(input, key) {
+		
+		output = '';
+		for (var i = 0, j = 0; i < input.length; i++) {
+			var c = input.charCodeAt(i);
+			if (isUppercase(c)) {
+				output += String.fromCharCode((c - 65 + key[j % key.length]) % 26 + 65);
+				j++;
+			} else if (isLowercase(c)) {
+				output += String.fromCharCode((c - 97 + key[j % key.length]) % 26 + 97);
+				j++;
+			} else {
+				output += input.charAt(i);
+			}
+		}
+		resultAnimate();
+		return output;
+	}
+	
+	
+	/* 
+	 * Returns an array of numbers, each in the range [0, 26), representing the given key.
+	 * The key is case-insensitive, and non-letters are ignored.
+	 * Examples:
+	 * - filterKey("AAA") = [0, 0, 0].
+	 * - filterKey("abc") = [0, 1, 2].
+	 * - filterKey("the $123# EHT") = [19, 7, 4, 4, 7, 19].
+	 */
+	function filterKey(key) {
+		var result = [];
+		for (var i = 0; i < key.length; i++) {
+			var c = key.charCodeAt(i);
+			if (isLetter(c))
+				result.push((c - 65) % 32);
+		}
+		return result;
+		
+	}
+	
+	
+	// Tests whether the given character code is a Latin letter.
+	function isLetter(c) {
+		return isUppercase(c) || isLowercase(c);
+	}
+	
+	// Tests whether the given character code is an Latin uppercase letter.
+	function isUppercase(c) {
+		return 65 <= c && c <= 90;  // 65 is character code for 'A'. 90 is 'Z'.
+	}
+	
+	// Tests whether the given character code is a Latin lowercase letter.
+	function isLowercase(c) {
+		return 97 <= c && c <= 122;  // 97 is character code for 'a'. 122 is 'z'.
+	}
+	
+};  
