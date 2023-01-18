@@ -4,6 +4,8 @@ var rot = document.createElement('input');
 var vig = document.createElement('input');
 rot.setAttribute('id', 'shift');
 vig.setAttribute('id', 'key');
+vig.value = 'key';
+rot.placeholder = 'Rot';
 
 // add event listener to create/remove elements on input selection 
 function changeCipher() {
