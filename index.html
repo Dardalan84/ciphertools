@@ -5,60 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap" rel="stylesheet">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
     <script src="animation.js"></script>
-
+    <script src='resultAnimate.js'></script>
+    <script src='base64.js'></script>
+    <script src='vigcypher.js'></script>
+    <script src='a1z26.js'></script>
+    <script src='ascii.js'></script>
+    <script src='atbash.js'></script>
+    <script src='rotcypher.js'></script>
     <link rel="stylesheet" href="index.css">
-<title>CypherCon Toolkit</title>
+<title>CypherCon Decryption Toolbox</title>
 </head>
 <body>
-  <div id="sketch">
-  </div>
+  <!-- <div id="sketch">
+  </div> -->
 
     <!-- Navbar -->
-    <div class="menu-area">
+    <!-- <div class="menu-area">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="#">Tools</a>
+        <li><a href="">Tools</a>
           <ul class="dropdown-1">
-            <li><a href="viginere.html">Viginere</a></li>
             <li><a href="ceasar.html">Ceasar</a></li>
-            <li><a href="base64.html">Base64</a></li>
+            <li><a href="viginere.html">Viginere</a></li>
+            <li><a href="base64.html">Base64</a> </li>
+            <li><a href="atbash.html">Atbash</a></li>
+            <li><a href="a1z26.html">A1Z26</a></li>
+            <li><a href="ascii.html">ASCII</a></li>
+
+
           </ul>
         </li>
         <li><a href="#">CypherCon</a></li>
         <li><a href="#">Cypher Forest</a></li>
       </ul>
-    </div>
+    </div> -->
   
     
   <!--Into to the tool kit-->
- <div class='intro'> <h6>The CypherCon Decryption Toolkit is a collection of resources to aid in the passage through Cypher Forest and other code breaking needs. </h6></div>
 
 <!--Main Page toolkit grid-->
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-     <h5> <a href="viginere.html">Viginere</a></h5>
-    </div>
-    <div class="col-sm">
-      <h5> <a href="ceasar.html">Ceasar</a></h5>
-    </div>
-    <div class="col-sm">
-      <h5> <a href="base64.html">Base64</a></h5>
-    </div>
-   
-  </div>
-</div>
+
    
       
-           
-     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-    <script src="rotcypher.js"></script>
-    <script src="vigcypher.js"></script>
+<div class="tool">
+  <h6>Welcome to the Decryption Toolkit</h6>  
+  <textarea id="text" cols="26" rows="1"  placeholder="enter message here..."></textarea>
+  <br>
+  <div class='resultMask'> <div id='result'></div></div>
+  Cypher: <select id="select_tool" onchange="changeCipher()">
+    <option value="a1z26">A1Z26</option>
+    <option value="ascii">ASCII</option>
+    <option value="atbash">ATBASH</option>
+    <option value="base64">BASE64</option>
+    <option value="ceasar">CEASAR</option>
+    <option value="viginere">VIGINERE</option>
+</select>
+          <button id='encrypt' onclick="encrypt()">Encrypt</button>
+          <button id='decrypt' onclick="decrypt()">Decrypt</button>
+
+
+        </div>   
+    
+    <script src="toolkit.js"></script>
 
 </body>
