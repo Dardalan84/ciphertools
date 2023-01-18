@@ -103,12 +103,13 @@ textarea::placeholder {
 }
 
 #shift {
-  width:6em;
+  width:4em;
   background-color:#ffffff;
+  text-align:center;
 }
 
 #key {
-  width:10em;
+  width:4em;
   
 }
 
@@ -243,11 +244,6 @@ label{
     left: 100%;
     width: 100%;
   }
-
-  
-
-
-
 
   
 
