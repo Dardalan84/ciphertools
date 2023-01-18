@@ -1,21 +1,18 @@
 h1 {
-    text-align: center;
-    margin:auto;
+   text-align: center;
+   margin:auto;
    padding:20px;
    background:linear-gradient(darkblue,#00ffe5);
-    font-size: 60px;
-    color: rgb(53, 3, 3);
+   font-size: 60px;
+   color: rgb(53, 3, 3);
    text-shadow: 4px 4px 4px #ff69b4;
- z-index: 1;
-
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-
+   z-index: 1;
+   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #sketch {
   position: inline;
-  padding-bottom:0px;
-  
+  padding-bottom:0px; 
   z-index: -3 !important;
 }
 
@@ -52,20 +49,17 @@ h6{
   text-align:center;
   margin:3%;
   font-family: 'Exo', sans-serif;
-
 }
 
 textarea {
   background-color: #00ffe5e9;
-font-size: 28px;
-font-family: 'Signika', sans-serif;
+  font-size: 28px;
+  font-family: 'Signika', sans-serif;
   border: black dotted 1px;
   outline:none;
   color: rgb(0, 0, 162);
   width:auto;
   font-family: 'Exo', sans-serif;
-  
-
 }
 
 textarea::placeholder {
@@ -99,7 +93,6 @@ textarea::placeholder {
 .format {
   text-align: center;
   color: rgb(108, 2, 2)
-  
 }
 
 #shift {
@@ -110,7 +103,6 @@ textarea::placeholder {
 
 #key {
   width:4em;
-  
 }
 
 .tool {
@@ -128,9 +120,6 @@ textarea::placeholder {
     box-shadow:-4px -4px #ff69b4, 4px 4px rgb(255, 105, 180),
     -6px -6px rgb(79, 15, 47), 6px 6px rgb(79,15,47),
     -10px -10px rgb(255, 105, 180), 10px 10px rgb(255, 105, 180);
-   
-
-    
 }
 
 button {
@@ -141,24 +130,6 @@ padding:5px;
 padding-top: 0px;
 }
 
-
-
-/* button::before {
-  content: "";
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  height: 100%;
-  background: #ff69b4;
-  border:1px grey solid;
-  border-bottom:none;
-  transition: 0.5s ease-in-out;
-}
-
-button:hover::before {
-  top: -100%;
-}  */
 
 .container{
   margin:auto;
@@ -180,71 +151,6 @@ label{
     padding: 0;
     box-sizing: border-box;
   }
-  .menu-area a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(248, 247, 247);
-    background: #145da0;
-    height: 50px;
-    font-family: 'Exo', sans-serif;
-   
-    text-decoration: none;
-    text-transform: uppercase;
-    padding:0px;
-    margin-top:0px;
-    list-style: none;
-  }
-  .menu-area a:hover{
-    background: #ff69b4;
-    color: rgb(55, 1, 1);
-    border: solid black 1px
-  }
-  .menu-area ul{
-    list-style: none;
-    display: flex;
-    padding:0px;
-  }
-  .menu-area li {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    padding: 0;
-    
-  }
-
-  .menu-area li a {
-    color: rgb(255, 105, 180)}
-  
-  .menu-area li:hover .dropdown-1 > li{
-    display: block;
-    top: 0;
-  }
-  .dropdown-1 li{
-    display: none;
-    position: relative;
-  }
-  .dropdown-1{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  .dropdown-1 li:hover .dropdown-2 li{
-    display: block;
-  }
-  .dropdown-2 li{
-    display: none;
-  }
-  .dropdown-2{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    width: 100%;
-  }
-
   
 
 
