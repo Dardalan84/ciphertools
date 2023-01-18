@@ -12,18 +12,6 @@ function encode64() {
     result.push(message);
 
     document.getElementById('result').innerHTML = result;
-    
-    const borderEffect = [
-        {width: '1200px'},
-        {width: '500px'}
-    ];
-
-    const borderTiming = {
-        duration: 400
-    };
-
-    const border = document.querySelector('.tool');
-    // border.animate(borderEffect, borderTiming);
    
     resultAnimate();
 }
