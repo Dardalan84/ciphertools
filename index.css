@@ -96,6 +96,21 @@ textarea::placeholder {
   font-family: 'Exo', sans-serif;
 }
 
+.format {
+  text-align: center;
+  color: rgb(108, 2, 2)
+  
+}
+
+#shift {
+  width:6em;
+  background-color:#ffffff;
+}
+
+#key {
+  width:10em;
+  
+}
 
 .tool {
     background-color:#72fef5;
@@ -228,6 +243,11 @@ label{
     left: 100%;
     width: 100%;
   }
+
+  
+
+
+
 
   
 
